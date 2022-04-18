@@ -2,9 +2,41 @@
 
 *{
     font-family: 'Lato', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-section div h1{
+ body{
+    background-color: #FFF;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+}
+
+.container{
+    width: 20vw;
+    height: 50vh;
+    min-width: 300px;
+    min-height: 470px;
+
+    background-color: #FFF;
+
+    padding: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 10px;
+}
+.container h1{
     text-align: center;
     font-size: 50px;
     font-weight: 400;
@@ -26,8 +58,35 @@ section div h1{
     border-bottom: 1px solid;
 }
 .input-field button{
-    width: 140px;
-    height: 30px;
+    width: 180px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #FFF;
+    background-color: #003780;
+    
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+.input-field button ion-icon{
+    font-size: 2em;
+}
+.input-field button:hover{
+    background-color: #04479e;
+}
+.input-field button:active{
+    background-color: #022c63;
+}
+.input-field button span{
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+.section-one img{
+    width: 40vw;
+    align-self: center;
 }
