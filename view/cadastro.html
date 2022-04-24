@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro - Simplifica Eventos</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     </head>
     <body>
         <header>
@@ -14,21 +14,22 @@
 
         <main>
             <section class="section-one">
-                <img src="img/register.svg" alt="ilustaração de cadastro">
+                <img src="../assets/img/register.svg" alt="ilustaração de cadastro">
             </section>
 
             <section class="section-two">
 
-                <div class="container">
+                <div class="container-form">
                     <h1>Cadastro</h1>
 
-                    <form action="#" method="POST">
+                    <form action="../php/RegisterUser.php" method="POST">
                         <div class="input-field">
                             <input type="text" name="name" id="name" placeholder="Nome Completo" autocomplete="off" required>
                             <input type="text" name="cpf" id="cpf" placeholder="CPF" autocomplete="off" required>
                             <input type="email" name="email" id="email" placeholder="E-mail" required>
                             <input type="password" name="password" id="password" placeholder="Senha" required>
-        
+                            <input type="password" name="password" id="password" placeholder="Confirmar senha" required>
+
                             <button type="submit">
                                 <ion-icon name="document-lock-outline"></ion-icon><span>Cadastrar</span>
                             </button>
