@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+*{
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	width: 100%;
+	height: 100vh;
+	background: radial-gradient(circle, #417dca 10%, #0c2f5a 70%, #01142c 96%);	
+}
+
+a{
+	text-decoration: none;
+	color: #fafafa;
+	font-family: 'Poppins' sans-serif;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+a:hover{
+	color: #003780;
+	transition: all 0.5s;
+}
+
+
+header span:hover{
+	color: #003780;
+	transition: 0.3s;
+}
+
+/*Ajustando tamanho do seletor que contem o formulário de login*/
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 8.5%;
+}
+
+main.container {
+    background: #fafafa;
+    min-height: 51vh;
+	min-width: 28vw;
+    padding: 3rem;
+	box-shadow: rgb(250, 250, 250) 0px 10px 25px -5px;
+	border: none;
+	border-radius: 8px;
+	position: relative;
+}
+
+main h1 {
+    font-weight: 600;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+main h1::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    bottom: 4px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg,#3b6fb3, #003780);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+	justify-content: space-around;
+}
+
+.input-field {
+    position: relative;
+	min-width: fit-content;
+}
+
+form .input-field:first-child{
+    margin-bottom: 4rem;
+}
+
+.input-field .underline::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.input-field .underline::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg,#3b6fb3, #003780);
+    transform: scaleX(0);
+    transition: all .3s ease-in-out;
+    transform-origin:left;
+}
+
+.input-field input:focus ~ .underline::after{
+    transform: scaleX(1);
+}
+
+.input-field input{
+    outline: none;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7); 
+	border: none;
+	background: transparent;
+	width: 100%;
+	height: 20px;
+}
+
+.input-field input::placeholder {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.botoes{
+    display: flex;
+    justify-content: space-between;
+}
+
+form #botao {
+    margin-top: 5rem;
+    background: #0c2f5a;
+    cursor: pointer;
+    color: #fafafa;
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: 0.5s;
+    height: 3.2rem;
+	border: none;
+	width: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+form #cadastro {
+	margin-top: 5rem;
+    background: transparent;
+    cursor: pointer;
+    color: #0c2f5a;
+	border: 1px solid #0c2f5a;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-radius: 4px;
+    transition: 0.5s;
+    height: 3rem;
+	width: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+form #cadastro:hover{
+	letter-spacing: 1px;
+    background: #0c2f5a;
+	color: #fafafa;
+}
+
+form #botao:hover {
+    letter-spacing: 1px;
+    background: #285896;
+}
