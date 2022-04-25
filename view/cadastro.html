@@ -23,22 +23,43 @@
                     <h1>Cadastro</h1>
 
                     <form action="../php/RegisterUser.php" method="POST">
-                        <div class="input-field">
-                            <input type="text" name="name" id="name" placeholder="Nome Completo" autocomplete="off" required>
-                            <input type="text" name="cpf" id="cpf" placeholder="CPF" autocomplete="off" required>
-                            <input type="email" name="email" id="email" placeholder="E-mail" required>
-                            <input type="password" name="password" id="password" placeholder="Senha" required>
-                            <input type="password" name="password" id="password" placeholder="Confirmar senha" required>
+                            <div class="input-field">
+                                <input type="text" name="name" id="name" placeholder="Nome Completo" autocomplete="off" required>   
+                                    <div class="underline"></div>
+                            </div>
 
-                            <button type="submit">
-                                <ion-icon name="document-lock-outline"></ion-icon><span>Cadastrar</span>
-                            </button>
-                        </div>
+                            <div class="input-field">                               
+                                <input type="text" name="cpf" id="cpf" placeholder="CPF" autocomplete="off" required>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="email" name="email" id="email" placeholder="E-mail" required>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-field">                              
+                                <input id="password" type="password" name="password"  placeholder="Senha" required>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-field">                              
+                                <input id="passwordConf" type="password" name="passwordConf"  placeholder="Confirmar senha" required>
+                                <div class="underline error"></div>
+                            </div>
+
+                            <div class="btn">
+                                <button id="button" type="submit" disabled>
+                                    <ion-icon name="document-lock-outline"></ion-icon><span>Cadastrar</span>
+                                </button>
+                            </div>
                     </form>
                 </div>
             </section>
         </main>
 
+
+        <script src="../assets/js/login.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     </body>
 </html>

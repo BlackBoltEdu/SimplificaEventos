@@ -119,6 +119,7 @@ form .input-field:first-child{
 	background: transparent;
 	width: 100%;
 	height: 20px;
+    padding: 20px 5px;
 }
 
 .input-field input::placeholder {
