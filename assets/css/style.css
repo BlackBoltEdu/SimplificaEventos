@@ -102,20 +102,15 @@ section{
 
 
 /* Configurando o botão do formulário */
-.btn{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.btn button{
+
+#button{
     width: 15em;
     height: 3.2rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin: 45px auto;
 
     font-size: 0.8rem;
     color: #0c2f5a;
@@ -126,26 +121,31 @@ section{
     border-radius: 5px;
     transition: 0.5s;
 }
-.btn #button:hover {
+#button:hover {
     font-size: 0.9rem;
     font-weight: bold;
     letter-spacing: 1px;
-    background: #0c2f5a;
+    background: linear-gradient(45deg,#3b6fb3, #003780);
 	color: #fafafa;
 }
-.btn button ion-icon{
+#button ion-icon{
     font-size: 2em;
 }
-.btn button:hover{
-    background-color: #04479e;
-}
-.btn button:active{
+#button:active{
     background-color: #022c63;
 }
-.btn button span{
+#button span{
     padding: 10px;
     font-size: 1.3em;
+
 }
+#button:disabled{
+    color: #FFF;
+    border: none;
+    background-color: #acacac;
+    cursor: not-allowed;
+}
+
 /* Fim da configuração do bottão */
 
 .section-one img{
@@ -156,6 +156,6 @@ section{
     align-self: center;
 }
 
-.input-field.error{
+#password ~ .underline.error::after{
     background: linear-gradient(45deg,#b33b3b, #800000);
 }

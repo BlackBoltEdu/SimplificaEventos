@@ -3,15 +3,12 @@ const init = () =>{
        const input = event.currentTarget;
 
        if(input.value.length < 8){
-           console.log(password.length < 8)
-           btnSubmit.setAttribute('disabled', 'disabled');
-           underline.classList.add('error');
+           btnSubmit.setAttribute('disabled', 'disabled')
+           input.nextElementSibling.classList.add('error');
        }else{
             btnSubmit.removeAttribute('disabled');
-            underline.classList.remove('error');
+            input.nextElementSibling.classList.remove('error');
        }
-     
-      
     }
 
     const password = document.querySelector('#password');
