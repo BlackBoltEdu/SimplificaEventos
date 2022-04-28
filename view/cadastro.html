@@ -24,27 +24,32 @@
 
                     <form action="../php/RegisterUser.php" method="POST">
                             <div class="input-field">
-                                <input type="text" name="name" id="name" placeholder="Nome Completo" autocomplete="off" required>   
-                                    <div class="underline"></div>
+                                <input id="name" type="text" name="name" autocomplete="off" required>   
+                                <label for="name">Nome</label>
+                                <div class="underline"></div>
                             </div>
 
                             <div class="input-field">                               
-                                <input id="cpf" type="text" name="cpf" placeholder="CPF ou CNPJ" autocomplete="off" required>
+                                <input id="cpf" type="text" name="cpf" autocomplete="off" required>
+                                <label for="cpf">CPF ou CNPJ</label>
                                 <div class="underline"></div>
                             </div>
 
                             <div class="input-field">
-                                <input type="email" name="email" id="email" placeholder="E-mail" required>
+                                <input id="email" type="email" name="email" required>
+                                <label for="email">E-mail</label>
                                 <div class="underline"></div>
                             </div>
 
                             <div class="input-field">                              
-                                <input id="password" type="password" name="password"  placeholder="Senha" required>
+                                <input id="password" type="password" name="password" required>
+                                <label for="password">Senha</label>
                                 <div class="underline"></div>
                             </div>
 
                             <div class="input-field">                              
-                                <input id="passwordConf" type="password" name="passwordConf"  placeholder="Confirmar senha" required>
+                                <input id="passwordConf" type="password" name="passwordConf" required>
+                                <label for="passwordConf">Confirmar senha</label>
                                 <div class="underline error"></div>
                             </div>
 

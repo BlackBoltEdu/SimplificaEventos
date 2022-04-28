@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+:root{
+    --bg-color: linear-gradient(45deg,#3b6fb3, #003780, #3b6fb3);
+}
+
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -48,6 +52,7 @@ section{
     margin: 35px 0px;
 }
 
+/* Configurando posição, tamanho e aparencia dos input's */
 .input-field {
     position: relative;
 	min-width: fit-content;
@@ -71,7 +76,20 @@ section{
     background: transparent;
     background-color: transparent;
 }
+.input-field input ~ label{
+    position: absolute;
+    top: 8px;
+    left: 5px;
 
+    font-size: 0.87rem;
+    transition: 0.4s;
+}
+.input-field input:focus ~ label,
+.input-field input:valid ~ label{
+    transform: translateY(-25px);
+    left: 0;
+    font-size: 0.96rem;
+}
 
 /* Configuração do underline dos input's */
 .input-field .underline::before{
@@ -90,7 +108,7 @@ section{
     width: 100%;
     bottom: -5px;
     left: 0;
-    background: linear-gradient(45deg,#3b6fb3, #003780);
+    background: var(--bg-color);
     transform: scaleX(0);
     transition: all .3s ease-in-out;
     transform-origin:left;
@@ -99,7 +117,7 @@ section{
     transform: scaleX(1);
 }
 /* Fim da configuração do underline dos input's */
-
+/* Fim da configuração dos input's */
 
 /* Configurando o botão do formulário */
 
@@ -125,7 +143,7 @@ section{
     font-size: 0.9rem;
     font-weight: bold;
     letter-spacing: 1px;
-    background: linear-gradient(45deg,#3b6fb3, #003780);
+    background: var(--bg-color);
 	color: #fafafa;
 }
 #button ion-icon{
