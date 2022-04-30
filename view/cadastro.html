@@ -22,7 +22,7 @@
                 <div class="container-form">
                     <h1>Cadastro</h1>
 
-                    <form action="../php/RegisterUser.php" method="POST">
+                    <form action="#" method="POST">
                             <div class="input-field">
                                 <input id="name" type="text" name="name" autocomplete="off" required>   
                                 <label for="name">Nome</label>
@@ -30,9 +30,9 @@
                             </div>
 
                             <div class="input-field">                               
-                                <input id="cpf" type="text" name="cpf" autocomplete="off" required>
+                                <input id="cpf" type="text" name="cpf" autocomplete="off"required>
                                 <label for="cpf">CPF ou CNPJ</label>
-                                <div class="underline"></div>
+                                <div class="underline" data-js-test="invalid-CPF" ></div>
                             </div>
 
                             <div class="input-field">
@@ -44,16 +44,16 @@
                             <div class="input-field">                              
                                 <input id="password" type="password" name="password" required>
                                 <label for="password">Senha</label>
-                                <div class="underline"></div>
+                                <div class="underline" data-js="underline-password"></div>
                             </div>
 
                             <div class="input-field">                              
                                 <input id="passwordConf" type="password" name="passwordConf" required>
                                 <label for="passwordConf">Confirmar senha</label>
-                                <div class="underline error"></div>
+                                <div class="underline"></div>
                             </div>
 
-                            <button id="button" type="submit">
+                            <button class="btnSubmit btnHover" id="button" type="submit">
                                 <ion-icon name="document-lock-outline"></ion-icon><span>Cadastrar</span>
                             </button>
                     </form>
