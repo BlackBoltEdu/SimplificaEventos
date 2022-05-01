@@ -16,11 +16,13 @@
     width: 100%;
     min-height: 100vh;
     background: radial-gradient(circle, #417dca 10%, #0c2f5a 70%, #01142c 96%);
+    overflow: hidden;
 }
 
 main{
     margin: 20px auto;
-    width: 1400px;
+    width: 100%;
+    height: 900px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -38,9 +40,7 @@ section{
 
 .container-form{
     width: 25vw;
-    height: 65vh;
-    min-width: 300px;
-    min-height: 470px;
+    height: 600px;
     padding: 0px 3rem;
     background-color: #FFF;
     box-shadow: rgb(250, 250, 250) 0px 10px 25px -5px;
@@ -48,9 +48,9 @@ section{
 }
 .container-form h1{
     text-align: center;
-    font-size: 50px;
+    font-size:  3em;
     font-weight: 600;
-    margin: 35px 0px;
+    margin: 20px 0px;
 }
 
 /* Configurando posição, tamanho e aparencia dos input's and label's */
@@ -67,7 +67,7 @@ section{
     width: 100%;
     height: 1em;
     padding: 20px 5px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
     outline: none;
     font-size: 0.9rem;
@@ -119,6 +119,18 @@ section{
 }
 /* Fim da configuração do underline dos input's */
 
+.input-field img{
+    position: absolute;
+    left: 90%;
+    bottom: 25%;
+    width: 1.4em;
+    cursor: pointer;
+}
+.input-field .input-password{
+    width: 90%;
+}
+
+
 /* Configurando o botão do formulário */
 .btnSubmit{
     width: 15em;
@@ -165,13 +177,90 @@ section{
 /* Fim da configuração do bottão */
 
 .section-one img{
-    margin-left: 110px;
-    width: 500px;
-    min-width: 200px;
-    max-width: 600px;
+    margin-left: 100px;
+    width: 600px;
+    max-width: 700px;
     align-self: center;
 }
 
 .underline.error::after{
     background: var(--bg-color-error);
+}
+
+/* Responsive */
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
+    .container-form{
+        width: 25vw;
+        min-width: 390px;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1366px){
+    .container-form{
+        width: 30vw;
+        min-width: 390px;
+    }
+    .container-form h1{
+        font-size: 2.8em;
+    }
+    .section-one img{
+        transition: 1s;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px){
+    .container-form{
+        width: 33vw;
+        min-width: 370px;
+    }
+    .container-form h1{
+        font-size: 2.8em;
+    }
+    .section-one img{
+        width: 500px;
+        transition: 1s;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+    main{
+        display: block;
+    }
+    .container-form{
+        width: 50vw;
+        height: 70vh;
+    }
+    .container-form h1{
+        font-size: 2.8em;
+    }
+    .section-one{
+        min-width: 0px;
+        min-height: 0px;
+        display: none;
+        transition: 0.8s;
+    }
+    section{
+        margin: 10% 15.5%;
+    }
+    .input-field{
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px){
+    main{
+        display: block;
+    }
+    section{
+        position: absolute;
+        left: 15%;
+        bottom: -15px;
+    }
+    .section-one{
+        transform: scale(0);
+    }
+    .container-form{
+        width: 65vw;
+        min-width: 380px;
+    }
 }

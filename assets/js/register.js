@@ -43,7 +43,6 @@ const init = () =>{
     /* End object mask */
     
     /* Funcition to Validate CPF */
- 
     const isCPF = (event) => {
         const inputCPF = event.currentTarget;
         const cpf = inputCPF.value.replace(/[.\-\/]/gm, "") // removing dots, hyphen and slash from CPF or CNPJ
@@ -55,6 +54,7 @@ const init = () =>{
         cpf === "55555555555" || cpf === "66666666666" || cpf === "77777777777" ||
         cpf === "88888888888" || cpf === "99999999999" || cpf.length > 11){
             underlineCPF.classList.add('error');
+            inputCPF.checkValidity() = false
             return false;
         }else{
             underlineCPF.classList.remove('error')
@@ -64,7 +64,7 @@ const init = () =>{
         let sum = 0;
         let rest = 0;
 
-        if(validCPF.length === 11){
+        if(validCPF.length < 12){
             /* Checking first value */
             for(let i = 0; i < 9; i++){
                 sum += validCPF[i] * (10 - i);
@@ -107,6 +107,8 @@ const init = () =>{
                     return false;
                 }
             }else{
+                btnSubmit.setAttribute('disabled', 'disabled')
+                btnSubmit.classList.remove('btnHover');
                 underlineCPF.classList.add('error');
                 return false;
             }
@@ -119,21 +121,20 @@ const init = () =>{
     const btnSubmit = document.querySelector('#button');
     const underlinePassword = document.querySelector('[data-js="underline-password"]');
     const underlineCPF = document.querySelector('[data-js-test="invalid-CPF"]');
+    const inputs = document.querySelectorAll('input');
     
     cpf.addEventListener('input', event => {
         event.target.value = masks.cpfOrCNPJ(event.target.value);
     });
 
-    cpf.addEventListener('blur', isCPF);
+    cpf.addEventListener('input', isCPF);
     cpf.addEventListener('blur', () =>{
         console.log(isCPF)
     });
     password.addEventListener('input', validatePassword);
 
-    
-    btnSubmit.addEventListener('click', e =>{
-        
-        e.preventDefault();
+    btnSubmit.addEventListener('submit', e =>{ 
+        e.preventDefault()
     });
 }
 
