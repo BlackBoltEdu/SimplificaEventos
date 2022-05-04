@@ -19,10 +19,52 @@
     overflow: hidden;
 }
 
+/* Site header  */
+header{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);
+}
+header img{
+    width: 8em;
+    border-radius: 50%;
+}
+header:hover img{
+    background-color: black;
+    cursor: pointer;
+    transition: 0.2s;
+}
+header:hover .nav-menu .nav-list{
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    transition: 1s;  
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-around;
+}
+.nav-list{
+    display: none;
+    list-style: none; 
+}
+.nav-menu li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+.nav-menu li a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+
 main{
-    margin: 20px auto;
     width: 100%;
-    height: 900px;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -40,7 +82,7 @@ section{
 
 .container-form{
     width: 25vw;
-    height: 600px;
+    height: 650px;
     padding: 0px 3rem;
     background-color: #FFF;
     box-shadow: rgb(250, 250, 250) 0px 10px 25px -5px;
@@ -127,7 +169,9 @@ section{
     cursor: pointer;
 }
 .input-field .input-password{
-    width: 90%;
+    /* width: 90%; */
+    padding-right: 2.8em;
+    height: inherit;
 }
 
 
@@ -223,9 +267,6 @@ section{
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px){
-    main{
-        display: block;
-    }
     .container-form{
         width: 50vw;
         height: 70vh;
@@ -248,9 +289,6 @@ section{
 }
 
 @media screen and (min-width: 300px) and (max-width: 767px){
-    main{
-        display: block;
-    }
     section{
         position: absolute;
         left: 15%;
@@ -261,6 +299,6 @@ section{
     }
     .container-form{
         width: 65vw;
-        min-width: 380px;
+        min-width: 350px;
     }
 }

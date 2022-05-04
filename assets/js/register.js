@@ -16,6 +16,22 @@ const init = () =>{
         }
     }
 
+    const conferencePassword = (e) =>{
+        const inputPasswordConf = e.currentTarget.value;
+        const inputPassword = password.value;
+
+        if(inputPasswordConf !== inputPassword || inputPassword.length < 8){
+            btnSubmit.setAttribute('disabled', 'disabled')
+            btnSubmit.classList.remove('btnHover');
+            underlinePasswordConf.classList.add('error');
+            return false;
+        }
+        underlinePasswordConf.classList.remove('error');
+        btnSubmit.removeAttribute('disabled');
+        btnSubmit.classList.add('btnHover');
+        return true;
+    }
+
      /* CPF and CNPJ mask */
     const masks = {
         cpfOrCNPJ (value){
@@ -47,7 +63,6 @@ const init = () =>{
         const inputCPF = event.currentTarget;
         const cpf = inputCPF.value.replace(/[.\-\/]/gm, "") // removing dots, hyphen and slash from CPF or CNPJ
     
-        console.log('tá rodando')
         // const's to verify
         if(cpf === '00000000000' || cpf === "00000000000" || cpf === "11111111111" ||
         cpf === "22222222222" || cpf === "33333333333" || cpf === "44444444444" ||
@@ -95,7 +110,6 @@ const init = () =>{
                 /* End of second value verification */
 
                 if(rest === validCPF[10]){
-                    console.log(`CPF Valido`);
                     btnSubmit.removeAttribute('disabled');
                     btnSubmit.classList.add('btnHover');
                     underlineCPF.classList.remove('error');
@@ -112,29 +126,46 @@ const init = () =>{
                 underlineCPF.classList.add('error');
                 return false;
             }
+            return false;
         }
     }
 
     const cpf = document.querySelector('#cpf');
+    const btnSubmit = document.querySelector('#button');
+    
+    /* DOM to verify passwords */
     const password = document.querySelector('#password');
     const passwordConf = document.querySelector('#passwordConf');
-    const btnSubmit = document.querySelector('#button');
+    const eye = document.querySelector('#visiblePassword');
+
     const underlinePassword = document.querySelector('[data-js="underline-password"]');
     const underlineCPF = document.querySelector('[data-js-test="invalid-CPF"]');
     const inputs = document.querySelectorAll('input');
     
     cpf.addEventListener('input', event => {
         event.target.value = masks.cpfOrCNPJ(event.target.value);
+        isCPF(event);
     });
 
-    cpf.addEventListener('input', isCPF);
-    cpf.addEventListener('blur', () =>{
-        console.log(isCPF)
-    });
+   /*  cpf.addEventListener('input', isCPF); */
     password.addEventListener('input', validatePassword);
+    passwordConf.addEventListener('input', conferencePassword);
+    eye.addEventListener('click', e =>{
+        if(password.type == 'password'){
+            password.type = 'text';
+            eye.src = '../assets/img/eye-off-outline.svg'
+        }else{
+            password.type = 'password';
+            eye.src = '../assets/img/eye-outline.svg'
+        }
+    })
 
-    btnSubmit.addEventListener('submit', e =>{ 
-        e.preventDefault()
+    btnSubmit.addEventListener('submit', e =>{
+        const teste = inputs.map((input, index) => {
+            if(input[index] === ''){
+                return false;
+            }
+        });
     });
 }
 
