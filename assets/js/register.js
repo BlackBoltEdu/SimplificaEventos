@@ -1,4 +1,19 @@
 const init = () =>{
+    const cpf = document.querySelector('#cpf');
+    const btnSubmit = document.querySelector('#button');
+    
+    /* DOM to verify passwords */
+    const password = document.querySelector('#password');
+    const passwordConf = document.querySelector('#passwordConf');
+    const eye = document.querySelector('#visiblePassword');
+
+    const underlinePassword = document.querySelector('[data-js="underline-password"]');
+    const underlineCPF = document.querySelector('[data-js-test="invalid-CPF"]');
+    const underlinePasswordConf = document.querySelector('[data-js="underline-password-conf"]');
+
+
+    const inputs = document.querySelectorAll('input');
+
     /* Validate Password */
     const validatePassword = (event) =>{
         const input = event.currentTarget;
@@ -16,7 +31,9 @@ const init = () =>{
         }
     }
 
-    const conferencePassword = (e) =>{
+    /* Conference of password */
+    const passwordConference = (e) =>{
+        console.log('A')
         const inputPasswordConf = e.currentTarget.value;
         const inputPassword = password.value;
 
@@ -129,27 +146,15 @@ const init = () =>{
             return false;
         }
     }
-
-    const cpf = document.querySelector('#cpf');
-    const btnSubmit = document.querySelector('#button');
-    
-    /* DOM to verify passwords */
-    const password = document.querySelector('#password');
-    const passwordConf = document.querySelector('#passwordConf');
-    const eye = document.querySelector('#visiblePassword');
-
-    const underlinePassword = document.querySelector('[data-js="underline-password"]');
-    const underlineCPF = document.querySelector('[data-js-test="invalid-CPF"]');
-    const inputs = document.querySelectorAll('input');
     
     cpf.addEventListener('input', event => {
         event.target.value = masks.cpfOrCNPJ(event.target.value);
-        isCPF(event);
     });
 
    /*  cpf.addEventListener('input', isCPF); */
     password.addEventListener('input', validatePassword);
-    passwordConf.addEventListener('input', conferencePassword);
+    passwordConf.addEventListener('input', passwordConference);
+
     eye.addEventListener('click', e =>{
         if(password.type == 'password'){
             password.type = 'text';

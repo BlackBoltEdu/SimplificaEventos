@@ -37,7 +37,7 @@
                 <div class="input-field">
                     <input class="input-password" id="passwordConf" type="password" name="passwordConf" required>
                     <label for="passwordConf">Confirmar senha</label>
-                    <div class="underline"></div>
+                    <div class="underline" data-js="underline-password-conf"></div>
                 </div>
 
                 <button class="btnSubmit btnHover" id="button" name="btnSubmit" value="submit" type="submit">
