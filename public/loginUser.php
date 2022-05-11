@@ -12,13 +12,22 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
     
     $mail = $data['email'];
     $email = $con->read('email = '."'$mail'");
-    
+
     if(!empty($email)){
-        if($email[0]['password'] == $data['password']){
+
+        /** 
+         * Metodo PHP password_verify($parametro_1, $parametro_2)
+         * Ele gera um hash para o $parametro_1 enviado pelo form de login
+         * e compara como hash gerado no form de cadastro que é trazido pela consutla no banco de dados;
+         */ 
+        if(password_verify($data['password'], $email[0]['password'])){
             header('Location: landingPage.php?success=true');
         }else{
             header('Location: '.$_SERVER['PHP_SELF'].'?user=false');
         }
+
+    }else{
+        header('Location: '.$_SERVER['PHP_SELF'].'?user=false');
     }
 }
 

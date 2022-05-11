@@ -11,15 +11,13 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
     $con = new Conexao('user');
 
     $operation = $con->create([
-
         'name'  => $data['name'],
         'email' => $data['email'],
-        'cpf'   => $data['cpf'],
-        'password' => $data['password']
-
+        'cpf'   => preg_replace('/\D/', '', $data['cpf']),
+        'password' => password_hash($data['password'], PASSWORD_DEFAULT),
     ]);
 
-    if(is_numeric($operation)){
+    if (is_numeric($operation)) {
         header('Location: loginUser.php?success=true');
     }
 }
