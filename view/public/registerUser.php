@@ -1,10 +1,8 @@
 <main>
-    <section class="section-one">
+   <!--  <section class="section-one">
         <img src="../assets/img/register.svg" alt="ilustaração de cadastro">
     </section>
-
-    <section class="section-two">
-
+ -->
         <div class="container-form">
             <h1>Cadastro</h1>
 
@@ -45,6 +43,4 @@
                 </button>
             </form>
         </div>
-
-    </section>
 </main>
