@@ -2,7 +2,12 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+// DEPENDENCIAS
+use \App\Session\Login;
 use App\Model\Conexao;
+
+// VERIFICANDO STATUS
+Login::logado();
 
 if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
 
@@ -18,7 +23,19 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
     ]);
 
     if (is_numeric($operation)) {
-        header('Location: loginUser.php?success=true');
+
+        // SESSÃO DE VALIDAÇÃO
+        $_SESSION['usuario_mestre'] = [
+
+            'id'       => $operation,
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'cpf'      => preg_replace('/\D/', '', $data['cpf']),
+            'logado'   => true,
+        ];
+
+        header('Location: landingPage.php');
+        exit;
     }
 }
 

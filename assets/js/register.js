@@ -54,7 +54,13 @@ const init = () =>{
         cpfOrCNPJ (value){
             let mask = 0
 
-            if(value.length < 15){
+            mask = value
+                .replace(/\D/g, '')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+                .replace(/(-\d{2})\d+?$/, '$1');
+            /* if(value.length < 15){
                 mask = value
                 .replace(/\D/g, '')
                 .replace(/(\d{3})(\d)/, '$1.$2')
@@ -68,7 +74,7 @@ const init = () =>{
                 .replace(/(\d{3})(\d)/, '$1/$2')
                 .replace(/(\d{4})(\d)/, '$1-$2')
                 .replace(/(-\d{2})\d+?$/, '$1');
-            }
+            } */
 
             return mask
         }
@@ -151,7 +157,7 @@ const init = () =>{
         event.target.value = masks.cpfOrCNPJ(event.target.value);
     });
 
-   /*  cpf.addEventListener('input', isCPF); */
+    cpf.addEventListener('input', isCPF);
     password.addEventListener('input', validatePassword);
     passwordConf.addEventListener('input', passwordConference);
 

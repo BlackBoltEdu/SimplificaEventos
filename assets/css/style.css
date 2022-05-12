@@ -60,8 +60,6 @@ header:hover .nav-menu .nav-list{
     color: #FFF;
 }
 
-
-
 main{
     width: 100%;
     height: 100vh;
@@ -174,7 +172,6 @@ section{
     height: inherit;
 }
 
-
 /* Configurando o botão do formulário */
 .btnSubmit{
     width: 15em;
@@ -269,7 +266,8 @@ section{
 @media screen and (min-width: 768px) and (max-width: 992px){
     .container-form{
         width: 50vw;
-        height: 70vh;
+        height: 650px;
+        min-height: 300px;
     }
     .container-form h1{
         font-size: 2.8em;
@@ -284,18 +282,13 @@ section{
         margin: 10% 15.5%;
     }
     .input-field{
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 }
 
 @media screen and (min-width: 300px) and (max-width: 767px){
-    section{
-        position: absolute;
-        left: 15%;
-        bottom: -15px;
-    }
     .section-one{
-        transform: scale(0);
+        display: none;
     }
     .container-form{
         width: 65vw;

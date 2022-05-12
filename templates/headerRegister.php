@@ -11,5 +11,14 @@
 
 <body>
     <header>
-        <img src="logo.png" alt="Logo Simplifica Eventos">
+        <img src="../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos">
+        <div class="nav-menu">
+            <nav class="nav-list">
+                <ul>
+                    <li><a href="">INICIO</a></li>
+                    <li><a href="">SOBRE</a></li>
+                    <li><a href="">SERVIÇOS</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>

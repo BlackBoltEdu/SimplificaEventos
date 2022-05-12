@@ -17,7 +17,7 @@
 
                 <div class="input-field">
                     <input id="cpf" type="text" name="cpf" autocomplete="off" required>
-                    <label for="cpf">CPF ou CNPJ</label>
+                    <label for="cpf">CPF</label>
                     <div class="underline" data-js-test="invalid-CPF"></div>
                 </div>
 
