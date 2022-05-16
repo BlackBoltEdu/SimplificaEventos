@@ -8,31 +8,29 @@
     <link rel="stylesheet" href="../assets/css/login.css">
 </head>
 <body>
-    <div class="center">
-        <main class="container">
-            <h1>Login</h2>
+    <main class="container">
+        <h1>Login</h2>
+    
+        <form method="POST">
+            <div class="input-field">
+                <input type="email" name="email" id="email" placeholder="e-mail" autocomplete="off">
+                    <div class="underline teste"></div>
+            </div>
         
-            <form action="../php/logar.php" method="post">
-                <div class="input-field">
-                    <input type="email" name="email" id="email" placeholder="e-mail" autocomplete="off">
-                        <div class="underline teste"></div>
-                </div>
-            
-                <div class="input-field">
-                    <input type="password" name="senha" id="senha" placeholder="senha">
-                    <div class="underline"></div>
-                </div>
+            <div class="input-field">
+                <input type="password" name="senha" id="senha" placeholder="senha">
+                <div class="underline"></div>
+            </div>
 
-                <div class="botoes">
-                    <div class="cadastrar">
-                        <a href="./cadastro.html">
-                            <button id="cadastro" type="button">Cadastre-se</button>
-                        </a>
-                    </div>  
-                    <button id="botao" type="submit">Entrar</button>
-                </div>
-            </form>
-        </main>
-    </div>
+            <div class="botoes">
+                <div class="cadastrar">
+                    <a href="#">
+                        <button id="cadastro" type="button">Cadastre-se</button>
+                    </a>
+                </div>  
+                <button id="botao" type="submit">Entrar</button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

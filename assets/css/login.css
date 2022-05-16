@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
 
 *{
 	margin: 0;
@@ -11,13 +9,15 @@
 body{
 	width: 100%;
 	height: 100vh;
-	background: radial-gradient(circle, #417dca 10%, #0c2f5a 70%, #01142c 96%);	
+	background: radial-gradient(circle, #417dca 10%, #0c2f5a 70%, #01142c 96%);
+    display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 a{
 	text-decoration: none;
 	color: #fafafa;
-	font-family: 'Poppins' sans-serif;
 	font-weight: 300;
 	letter-spacing: 1px;
 }
@@ -27,25 +27,17 @@ a:hover{
 	transition: all 0.5s;
 }
 
-
 header span:hover{
 	color: #003780;
 	transition: 0.3s;
 }
 
-/*Ajustando tamanho do seletor que contem o formulário de login*/
-.center{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 8.5%;
-}
-
 main.container {
     background: #fafafa;
     min-height: 51vh;
-	min-width: 28vw;
-    padding: 3rem;
+	width: 450px;
+    min-width: 350px;
+    padding: 2.7rem;
 	box-shadow: rgb(250, 250, 250) 0px 10px 25px -5px;
 	border: none;
 	border-radius: 8px;
@@ -129,6 +121,7 @@ form .input-field:first-child{
 .botoes{
     display: flex;
     justify-content: space-between;
+    width: inherit;
 }
 
 form #botao {
@@ -158,22 +151,41 @@ form #cadastro {
     font-size: 0.9rem;
     font-weight: 300;
     border-radius: 4px;
-    transition: 0.5s;
     height: 3rem;
 	width: 120px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+    transition: 0.5s;
 }
 
 form #cadastro:hover{
-	letter-spacing: 1px;
+	letter-spacing: 0.09em;
     background: #0c2f5a;
 	color: #fafafa;
 }
 
 form #botao:hover {
-    letter-spacing: 1px;
+    letter-spacing: 0.2em;
     background: #285896;
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    form .botoes{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    form #botao{
+        margin: 1.7em 0 1em 0;
+        width: 290px;
+    }
+    form #cadastro{
+        margin: 0;
+        width: 290px;
+    }
+    main.container{
+        width: 370px;
+        min-width: none;
+    }
 }
