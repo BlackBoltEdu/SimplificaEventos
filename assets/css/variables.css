@@ -1,6 +1,9 @@
 :root{
     --color-light: #FFF;
     --color-dark: #000;
+    
+    --bg-color-elements2: linear-gradient(45deg,#4F8EE3, #4082DA);
+
     --bg-color-elements: linear-gradient(45deg,#5190e4, #0654bb, #00295f);
     --bg-color-error: linear-gradient(45deg,#f55e5e, #f31a1a, #8f0303);
 }

@@ -14,37 +14,69 @@ body{
 }
 
 header .nav-list{
+    width: 100%;
+    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background: var(--bg-color-elements);
 }
 
-header .nav-list a img{
-    width: 120px;
-    top: -10px;
-    padding-left: 30px;
+a, span{
+    color: var(--color-light);
+    text-decoration: none;
+    transition: 0.5s;
+}
+a:hover{
+    transform: scale(1.07);
 }
 
-header .nav-list ul{
+header .nav-list .link-logo img{
+    width: 105px;
+    margin-top: -10px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+header .nav-list a img:hover{
+    transform: scale(1.07);
+}
+
+header .nav-list .list{
     display: flex;
     align-items: center;
     flex-direction: row;
     margin: 0;
-    padding-right: 100px;
+    margin-right: 100px;
 }
 
 header .nav-list ul li{
+    text-align: center;
+    position: relative;
     list-style: none;
-    padding: 20px;
+    margin: 20px;
+    transition: 0.5s;
 }
 
-a{
-    color: var(--color-light);
-    text-decoration: none;
+/* header .nav-list .list li a::before{
+    content: '';
+    width: 100%;
+    height: 5px;
+    bottom: -1px;
+    position: absolute;
+    background-color: transparent;
+} */
+header .nav-list .list li::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -1px;
+    left: 0px;
+    background: var(--color-light);
+    transform: scaleX(0);
+    transition: all .4s ease-in-out;
+    transform-origin: left;
 }
-
-header .nav-list a img:hover{
-    background-color: var(--color-light);
-    border-radius: 50%;
-    color: var(--color-dark);
+header .nav-list .list li:hover::after{
+    transform: scale(1);
 }
