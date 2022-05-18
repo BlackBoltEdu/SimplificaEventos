@@ -1,0 +1,125 @@
+
+.container{
+   max-width:300px;
+   background:rgba( 122, 127, 228, 0.70);
+   margin:0px;
+   padding: 10px 0px 30px 0px;
+   min-height: 100vh;
+   border:1px solid #6b6fc0;
+   box-shadow:0px 4px 5px rgba(122, 127, 228, 0.55);
+}
+
+.link{
+   font-size:16px;
+   font-weight:300;
+   text-align:center;
+   position:relative;
+   height:40px;
+   line-height:40px;
+   margin-top:30px;
+   overflow:hidden;
+   width:90%;
+   margin-left:5%;
+   cursor:pointer;
+}
+
+.link:after{
+   content: '';
+   position:absolute;
+   width:80%;
+   border-bottom:1px solid rgba(255, 255, 255, 0.5);
+   bottom:50%;
+   left:-100%;
+   transition-delay: all 0.5s;
+   transition: all 0.5s;
+}
+
+.link:hover:after,
+.link.hover:after{
+   left:100%;
+}
+
+.link .texto{
+   text-shadow:0px -40px 0px rgba(255, 255, 255, 1);
+   transition:all 0.75s;
+   transform:translateY(100%) translateZ(0);
+   transition-delay:all 0.25s;
+}
+
+.link:hover .texto,
+.link.hover .texto{
+   text-shadow:0px -40px 0px rgba(255, 255, 255, 0);
+   transform:translateY(0%) translateZ(0) scale(1.1);
+   font-weight:600;
+}
+
+@media screen and (min-width: 200px) and (max-width: 610px) {
+   header .nav-list{
+      background: none;
+      justify-content: center;
+      margin-top: 20px;
+   }
+   header .nav-list .list{
+      display: none;
+   }
+   header .nav-list .link-logo img{
+      background: var(--bg-color-elements);
+      border-radius: 50%;
+   }
+
+
+   #toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: var(--bg-color-elements);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      box-shadow: 0px 4px 5px rgb(0 0 0 / 40%);
+      z-index: 10;
+   }
+   
+   #toggle::before {
+      content: '';
+      position: absolute;
+      width: 28px;
+      height: 2px;
+      background: #fff;
+      transform: translateY(-5px);
+      transition: 0.2s;
+   }
+   
+   #toggle::after{
+      content: '';
+      position: absolute;
+      width: 28px;
+      height: 2px;
+      background: #FFF;
+      transform: translateY(5px);
+      transition: 0.2s;
+   }
+   
+   #toggle.active::before{
+      transform: translateY(0px) rotate(45deg); 
+   }
+   #toggle.active::after{
+      transform: translateY(0px) rotate(-45deg);
+   }
+   
+   #sidebar{
+      position: fixed;
+      top: 0;
+      /* left: -250px; */
+      width: 250px;
+      height: 100vh;
+      transition: 0.5s;
+   }
+   #sidebar.active{
+      left: 0px;
+   }
+}

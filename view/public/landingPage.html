@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,35 +9,39 @@
 
     <link rel="stylesheet" type="text/css" href="../../assets/css/variables.css">
     <link rel="stylesheet" type="text/css" href="../../assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/navbar_mobile.css">
 </head>
+
 <body>
-    <header>
-        <div>
+    <div id="toggle"></div>
+    <div id="sidebar">
+        <header>
             <nav class="nav-list">
                 <a class="link-logo" href="">
-                    <img src="../../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos" id="logo">
+                    <img src="../../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos"
+                        id="logo">
                 </a>
-                
+
                 <ul class="list">
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">SOBRE</a></li>
-                    <li><a href="">SERVIÇOS</a></li>
-                    <li><a href="">PACOTES</a></li>
+                    <li class="item"><a href="">HOME</a></li>
+                    <li class="item"><a href="">SOBRE</a></li>
+                    <li class="dropdown">
+                        <span>SERVIÇOS<ion-icon name="chevron-down-outline"></ion-icon></span>
+                        <ul class="sub-list">
+                            <li class="sub-list_item"><a href="">SERVIÇO 1</a></li>
+                            <li class="sub-list_item"><a href="">SERVIÇO 2</a></li>
+                            <li class="sub-list_item"><a href="">SERVIÇO 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="item"><a href="">PACOTES</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
+        </header>
+    </div>
 
-    <script>
-        /* const logo = document.querySelector('#logo');
-        console.log(logo);
-
-        logo.addEventListener('mouseenter', () => {
-            logo.src = '../../assets/img/logo-simplifica-eventos-black.svg';
-            logo.addEventListener('mouseleave', () =>{
-                logo.src = '../../assets/img/logo-simplifica-eventos-white.svg';
-            });
-        }); */
-    </script>
+    <script src="./../../assets/js/navbar_mobile.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

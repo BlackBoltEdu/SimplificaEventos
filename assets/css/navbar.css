@@ -10,11 +10,22 @@
 body{
     width: 100%;
     height: 100%;
-    background-color: black;
+}
+
+a, span{
+    color: var(--color-light);
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+span{
+    display: flex;
+    align-items: center;
 }
 
 header .nav-list{
-    width: 100%;
+    width: 100vw;
     height: 70px;
     display: flex;
     flex-direction: row;
@@ -22,18 +33,10 @@ header .nav-list{
     background: var(--bg-color-elements);
 }
 
-a, span{
-    color: var(--color-light);
-    text-decoration: none;
-    transition: 0.5s;
-}
-a:hover{
-    transform: scale(1.07);
-}
 
 header .nav-list .link-logo img{
     width: 105px;
-    margin-top: -10px;
+    margin-top: -17px;
     margin-left: 30px;
     transition: 0.5s;
 }
@@ -43,29 +46,22 @@ header .nav-list a img:hover{
 
 header .nav-list .list{
     display: flex;
+    
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
     margin: 0;
     margin-right: 100px;
 }
 
-header .nav-list ul li{
+header .nav-list .list li{
     text-align: center;
     position: relative;
     list-style: none;
-    margin: 20px;
-    transition: 0.5s;
 }
 
-/* header .nav-list .list li a::before{
-    content: '';
-    width: 100%;
-    height: 5px;
-    bottom: -1px;
-    position: absolute;
-    background-color: transparent;
-} */
-header .nav-list .list li::after{
+header .nav-list .list li.item::after{
     content: '';
     position: absolute;
     height: 2px;
@@ -77,6 +73,31 @@ header .nav-list .list li::after{
     transition: all .4s ease-in-out;
     transform-origin: left;
 }
-header .nav-list .list li:hover::after{
+header .nav-list .list li.item:hover::after{
     transform: scale(1);
+}
+
+/* SUB LIST */
+
+.list .dropdown .sub-list{
+    position: absolute;
+    width: 150px;
+    background: var(--bg-color-elements);
+    border-radius: 10px;
+    top: 30px;
+    left: -38px;
+    opacity: 0;
+    transition: .3s;
+}
+.list .dropdown:hover .sub-list{
+    border-radius: 10px;
+    opacity: 1;
+}
+.list .dropdown .sub-list li{
+    margin: 20px;
+}
+
+.list .dropdown:hover .sub-list li:hover{
+    transform: scale(1.05);
+    letter-spacing: 1.4px;
 }
