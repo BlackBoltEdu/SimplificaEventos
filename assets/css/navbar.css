@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -12,12 +10,11 @@ body{
     height: 100%;
 }
 
-a, span{
+header .nav-list a, header .nav-list span{
     color: var(--color-light);
     text-decoration: none;
     transition: 0.5s;
     cursor: pointer;
-    
 }
 span{
     display: flex;
@@ -25,18 +22,17 @@ span{
 }
 
 header .nav-list{
-    width: 100vw;
+    width: 100%;
     height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: var(--bg-color-elements);
+    background: var(--bg-color-primary);
 }
 
-
 header .nav-list .link-logo img{
-    width: 105px;
-    margin-top: -17px;
+    width: 115px;
+    margin-top: -18px;
     margin-left: 30px;
     transition: 0.5s;
 }
@@ -46,10 +42,8 @@ header .nav-list a img:hover{
 
 header .nav-list .list{
     display: flex;
-    
     align-items: center;
     flex-direction: row;
-    flex-wrap: wrap;
     gap: 40px;
     margin: 0;
     margin-right: 100px;
@@ -78,18 +72,20 @@ header .nav-list .list li.item:hover::after{
 }
 
 /* SUB LIST */
-
 .list .dropdown .sub-list{
     position: absolute;
-    width: 150px;
-    background: var(--bg-color-elements);
+    width: 160%;
+    height: auto;
+    background: var(--bg-color-primary);
     border-radius: 10px;
     top: 30px;
     left: -38px;
     opacity: 0;
     transition: .3s;
+    z-index: -1;
 }
 .list .dropdown:hover .sub-list{
+    z-index: 2;
     border-radius: 10px;
     opacity: 1;
 }

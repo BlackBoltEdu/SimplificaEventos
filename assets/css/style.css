@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-:root{
-    --bg-color-elements: linear-gradient(45deg,#5190e4, #0654bb, #00295f);
-    --bg-color-error: linear-gradient(45deg,#f55e5e, #f31a1a, #8f0303);
-}
-
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -15,63 +10,21 @@
  body{
     width: 100%;
     height: 100vh;
-    background: radial-gradient(circle, #417dca 10%, #0c2f5a 70%, #01142c 96%);
-    overflow: hidden;
-}
-
-/* Site header  */
-header{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    left: 50%;
-    transform: translate(-50%);
-}
-header img{
-    width: 8em;
-    border-radius: 50%;
-}
-header:hover img{
-    background-color: black;
-    cursor: pointer;
-    transition: 0.2s;
-}
-header:hover .nav-menu .nav-list{
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    transition: 1s;  
-}
-.nav-menu{
-    display: flex;
-    justify-content: space-around;
-}
-.nav-list{
-    display: none;
-    list-style: none; 
-}
-.nav-menu li{
-    letter-spacing: 3px;
-    margin-left: 32px;
-}
-.nav-menu li a{
-    text-decoration: none;
-    color: #FFF;
+    background: var(--bg-color-primary);
 }
 
 main{
     width: 100%;
-    height: 100vh;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    z-index: 2;
 }
 
 .container-form{
     width: 25vw;
-    height: 70vh;
+    height: 60vh;
     min-width: 400px;
     min-height: 600px;
 
@@ -101,7 +54,7 @@ main{
     width: 100%;
     height: 1em;
     padding: 20px 5px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     outline: none;
     font-size: 0.9rem;
@@ -135,15 +88,17 @@ main{
     bottom: -5px;
     left: 0;
     background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
 .input-field .underline::after{
     content: '';
     position: absolute;
     height: 2px;
     width: 100%;
+    margin-bottom: 30px;
     bottom: -5px;
     left: 0;
-    background: var(--bg-color-elements);
+    background: var(--bg-color-secudary);
     transform: scaleX(0);
     transition: all .3s ease-in-out;
     transform-origin:left;
@@ -156,14 +111,12 @@ main{
 .input-field img{
     position: absolute;
     left: 90%;
-    bottom: 25%;
+    bottom: 50%;
     width: 1.4em;
     cursor: pointer;
 }
 .input-field .input-password{
-    /* width: 90%; */
     padding-right: 2.8em;
-    height: inherit;
 }
 
 /* Configurando o botão do formulário */
@@ -174,22 +127,25 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 45px auto;
+    margin: 45px auto 0 auto;
 
     font-size: 0.8rem;
-    color: #0c2f5a;
+    font-weight: bold;
+    color: #FFB127;
     background: transparent;
     cursor: pointer;
 
-    border: 1px solid #0c2f5a;
+    border: 1px solid #FFB127;
     border-radius: 5px;
     transition: 0.5s;
 }
 .btnSubmit.btnHover:hover {
+    border: none;
+    box-shadow: 0 0 10px #1a1a1a;
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: lighter;
     letter-spacing: 1px;
-    background: var(--bg-color-elements);
+    background: var(--bg-color-primary);
 	color: #fafafa;
 }
 .btnSubmit:active{
@@ -207,7 +163,6 @@ main{
 .btnSubmit span{
     padding: 10px;
     font-size: 1.3em;
-
 }
 /* Fim da configuração do bottão */
 
@@ -222,23 +177,47 @@ main{
     background: var(--bg-color-error);
 }
 
-@media screen and (min-width: 300px) and (max-width: 500px){
+.align-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 300px) and (max-width: 610px){
     .container-form{
         min-width: 330px;
-        min-height: 500px;
+        max-width: 340px;
+        min-height: 550px;
+        max-height: 560px;
         transition: 0.3s;
-    }
-    .input-field input{
-        margin-bottom: 15px !important;
     }
     .btnSubmit{
         height: 2.6rem;
-        margin: 30px auto;
+        margin-top: 10px;
     }
 }
 
-@media screen and (min-height: 700px) and (max-height: 900px) {
+@media screen and (min-height: 500px) and (max-height: 740px) {
+    .container-form{
+        min-width: 320px;
+        max-width: 340px;
+        min-height: 550px;
+        transition: 0.3s;
+    }
+
     .input-field input{
-        margin-bottom: 27px;
+        margin-bottom: 22px;
+    }
+    header .nav-list .link-logo img{
+        display: none;
+    }
+    #sidebar.active .nav-list.active .link-logo img{
+        display: block;
+    }
+
+    .input-field input:focus ~ label,
+    .input-field input:valid ~ label{
+        top: 10px;
+        font-size: 0.9em;
     }
 }

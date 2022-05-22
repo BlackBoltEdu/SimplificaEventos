@@ -5,75 +5,86 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro - Simplifica Eventos</title>
+        <link rel="stylesheet" type="text/css" href="../assets/css/variables.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="../assets/css/navbar_mobile.css">
         <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
         <style>
             
         </style>
     </head>
     <body>
+
+        <div id="toggle"></div>
+        <div id="sidebar">
         <header>
-            <img src="../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos">
-            <div class="nav-menu">
-                <nav class="nav-list">
-                    <ul>
-                        <li><a href="">INICIO</a></li>
-                        <li><a href="">SOBRE</a></li>
-                        <li><a href="">SERVIÇOS</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav class="nav-list" id="nav-bar">
+                <a class="link-logo" href="">
+                    <img src="../../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos"
+                        id="logo">
+                </a>
+
+                <ul class="list">
+                    <li class="item"><a href="">HOME</a></li>
+                    <li class="item"><a href="">SOBRE</a></li>
+                    <li class="dropdown">
+                        <span>SERVIÇOS<ion-icon name="chevron-down-outline"></ion-icon></span>
+                        <ul class="sub-list">
+                            <li class="sub-list_item"><a href="">SERVIÇO 1</a></li>
+                            <li class="sub-list_item"><a href="">SERVIÇO 2</a></li>
+                            <li class="sub-list_item"><a href="">SERVIÇO 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="item"><a href="">PACOTES</a></li>
+                </ul>
+            </nav>
         </header>
+        </div>
 
         <main>
-            <section class="section-one">
-                <img src="../assets/img/register.svg" alt="ilustaração de cadastro">
-            </section>
-
-            <section class="section-two">
-
-                <div class="container-form">
-                    <h1>Cadastro</h1>
-
-                    <form action="#" method="POST">
-                            <div class="input-field">
-                                <input id="name" type="text" name="name" autocomplete="off" required>   
-                                <label for="name">Nome</label>
-                                <div class="underline"></div>
-                            </div>
-
-                            <div class="input-field">                               
-                                <input id="cpf" type="text" name="cpf" autocomplete="off" required>
-                                <label for="cpf">CPF ou CNPJ</label>
-                                <div class="underline" data-js-test="invalid-CPF" ></div>
-                            </div>
-
-                            <div class="input-field">
-                                <input id="email" type="email" name="email" required>
-                                <label for="email">E-mail</label>
-                                <div class="underline"></div>
-                            </div>
-
-                            <div class="input-field">                            
-                                <input class="input-password" id="password" type="password" name="password" required>
-                                <label for="password">Senha</label>
-                                <img id="visiblePassword" src="../assets/img/eye-outline.svg" alt="Exibit senha">
-                                <div class="underline" data-js="underline-password"></div>
-                            </div>
-
-                            <div class="input-field">                              
-                                <input class="input-password" id="passwordConf" type="password" name="passwordConf">
-                                <label for="passwordConf">Confirmar senha</label>
-                                <div class="underline"></div>
-                            </div>
-
-                            <button class="btnSubmit btnHover" id="button" type="submit">
-                                <ion-icon name="document-lock-outline"></ion-icon><span>Cadastrar</span>
-                            </button>
-                    </form>
-                </div>
-            </section>
-        </main>
+            <div class="container-form">
+                <h1>Cadastro</h1>
+    
+                <form method="POST">
+                    <div class="input-field">
+                        <input id="name" type="text" name="name" autocomplete="off" required>
+                        <label for="name">Nome</label>
+                        <div class="underline"></div>
+                    </div>
+    
+                    <div class="input-field">
+                        <input id="cpf" type="text" name="cpf" autocomplete="off" required>
+                        <label for="cpf">CPF</label>
+                        <div class="underline" data-js-test="invalid-CPF"></div>
+                    </div>
+    
+                    <div class="input-field">
+                        <input id="email" type="email" name="email" required>
+                        <label for="email">E-mail</label>
+                        <div class="underline"></div>
+                    </div>
+    
+                    <div class="input-field">
+                        <input class="input-password" id="password" type="password" name="password" required>
+                        <label for="password">Senha</label>
+                        <img id="visiblePassword" src="../assets/img/eye-outline.svg" alt="">
+                        <div class="underline" data-js="underline-password"></div>
+                    </div>
+    
+                    <div class="input-field">
+                        <input class="input-password" id="passwordConf" type="password" name="passwordConf" required>
+                        <label for="passwordConf">Confirmar senha</label>
+                        <div class="underline" data-js="underline-password-conf"></div>
+                    </div>
+    
+                    <button class="btnSubmit btnHover" id="button" name="btnSubmit" value="submit" type="submit">
+                        <ion-icon name="document-lock-outline"></ion-icon><span>Cadastrar</span>
+                    </button>
+                </form>
+            </div>
+         </main>
         
+        <script src="../assets/js/navbar_mobile.js"></script>
         <script src="../assets/js/register.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     </body>

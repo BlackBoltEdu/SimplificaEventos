@@ -15,7 +15,7 @@
 
             <div class="botoes">
                 <div class="cadastrar">
-                    <a href="./cadastro.html">
+                    <a href="./../public/registerUser.php">
                         <button id="cadastro" type="button">Cadastre-se</button>
                     </a>
                 </div>  

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simplifica Eventos</title>
-
-    <link rel="stylesheet" type="text/css" href="../../assets/css/variables.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/css/navbar.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/css/navbar_mobile.css">
+    <title>Cadastro - Simplifica Eventos</title>
+    
+    <link rel="stylesheet" type="text/css" href="./../assets/css/variables.css">
+    <link rel="stylesheet" type="text/css" href="./../assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./../assets/css/navbar_mobile.css">
+    <link rel="stylesheet" type="text/css" href="./../assets/css/landingPage.css">
 </head>
 
 <body>
     <div id="toggle"></div>
     <div id="sidebar">
         <header>
-            <nav class="nav-list">
-                <a class="link-logo" href="">
-                    <img src="../../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos"
+            <nav class="nav-list" id="nav-bar">
+                <a class="link-logo" href="./../public/landingPage.php">
+                    <img src="./../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos"
                         id="logo">
                 </a>
 
@@ -34,14 +35,8 @@
                         </ul>
                     </li>
                     <li class="item"><a href="">PACOTES</a></li>
+                    <li class="item"><a href="./loginUser.php">LOGIN</a></li>
                 </ul>
             </nav>
         </header>
     </div>
-
-    <script src="./../../assets/js/navbar_mobile.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-
-</html>
