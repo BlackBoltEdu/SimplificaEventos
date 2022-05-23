@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 :root{
-    --color-light: #FFF;
-    --color-dark: #000;
     --color-primary: #1A1A1A;
     --color-secundary: #FFB127;
+
+    --color-light: #FFF;
+    --color-dark: #000;
+    --color-grey: #212122;
 
     --bg-color-primary: linear-gradient(45deg, #1A1A1A, #3f3c3c, #1A1A1A);
     --bg-color-secudary: linear-gradient(45deg,#FFB127, #f3be63, #f59b00);
