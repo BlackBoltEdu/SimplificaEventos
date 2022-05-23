@@ -18,6 +18,7 @@
       background: var(--bg-color-primary);
       border-radius: 50%;
       transition: 1s;
+      z-index: 10;
    }
 
    header .nav-list.active .link-logo img{

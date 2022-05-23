@@ -1,9 +1,24 @@
 :root{
     --color-light: #FFF;
     --color-dark: #000;
+    --color-primary: #1A1A1A;
+    --color-secundary: #FFB127;
 
-    --bg-color-primary: linear-gradient(45deg,#1A1A1A, #3f3c3c, #1A1A1A);
+    --bg-color-primary: linear-gradient(45deg, #1A1A1A, #3f3c3c, #1A1A1A);
     --bg-color-secudary: linear-gradient(45deg,#FFB127, #f3be63, #f59b00);
     --bg-color-elements: linear-gradient(45deg,#5190e4, #0654bb, #00295f);
     --bg-color-error: linear-gradient(45deg,#f55e5e, #f31a1a, #8f0303);
+}
+
+::-webkit-scrollbar{
+    width: 0.6rem;
+    height: 1rem;
+    background-color: #07090e;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0.2rem;
+    background-color: #1a1a1a;
+    box-shadow: inset 0 0 0 0.063rem #3d4044;
+    border: 0.1rem solid #1a1a1a;
 }

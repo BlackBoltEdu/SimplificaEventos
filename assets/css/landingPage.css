@@ -1,14 +1,27 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
 body{
     margin: 0;
     padding: 0;
-    max-width: 1920px;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    word-wrap: break-word;
     overflow-wrap: break-word;
+    scroll-behavior: smooth;
 }
 
 section{
-    background-color: bisque;
     height: 100%;
+    background: var(--color-secundary);
+}
+
+.division{
+    width: 100%;
+    height: .8px;
+    background-color: WHITE;
 }
 
 .section-one .background-img{
@@ -17,7 +30,6 @@ section{
     align-items: center;
     height: 100%;
     width: 100%;
-    position: relative;
     overflow: hidden;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -29,18 +41,171 @@ section{
     background-image: url('../img/event-background.jpg');
 }
 
-.section-one .background-img::after{
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, rgba(0, 0, 0) 100%);
+.section-two{
+    height: 70%;
+    background: var(--color-primary);
+    color: var(--color-light);
 }
 
 .section-one .background-img h1{
-    font-size: 4em;
+    font-size: 5em;
     margin-bottom: 40px;
-    background-color: rgba(255, 255, 255, .5) ;
+    color: var(--color-light);
+    text-shadow: 0px 5px 20px #000;
+    /* background-color: rgba(255, 255, 255, .5); */
+}
 
+.section-two .home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.section-two .home .text{
+    display: flex;
+    max-width: 480px;
+    height: 60%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.section-two .home .text h2{
+    max-width: 400px;
+    font-size: 1.7em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.section-two .home .text p{
+    width: 100%;
+    font-size: 20px;
+}
+
+.section-two .home .text .section-two__btn{
+    display: flex;
+    justify-content: center;
+}
+
+.section-two .home .text a{
+    width: 70%;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: var(--color-light);
+    cursor: pointer;
+    padding: 10px 5px;
+    border: 1px solid white;
+    text-align: center;
+    transition: all 0.41s ease;
+}
+.section-two .home .text a:hover{
+    background-color: rgba(255, 255, 255, .3);
+    letter-spacing: 1px
+}
+
+.section-two .home .home-img{
+    width: 40%;
+    min-width: 360px;
+    margin-bottom: 50px;
+}
+
+.scrollReveal{
+    visibility: hidden;
+}
+
+/* SECTION THREE */
+.section-three{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-three .cantainer-services{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.section-three .cantainer-services .title-service{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-three .cantainer-services .title-service h2{
+    font-size: 3em;
+}
+
+.section-three .cantainer-services .services{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.section-three .cantainer-services .services .service{
+    width: 300px;
+    display: flex;
+}
+/* SECTION THREE END */
+
+/* MEDIA QUERY */
+@media screen and (min-width: 1050px) and (max-width: 1300px) {
+    .section-two .home{
+        width: 100%;
+        padding: 20px;
+        gap: 100px;
+    }
+    .section-two .home .text h2{
+        font-size: 1.4em;
+    }
+
+    .section-two .home .text p{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1049px) {
+    .section-two .home{
+        width: 100%;
+        padding: 20px;
+        gap: 70px;
+    }
+    .section-two .home .text h2{
+        font-size: 1.3em;
+    }
+
+    .section-two .home .text p{
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 759px) {
+    .section-two .home{
+        flex-direction: column-reverse;
+        gap: 15px;
+        width: 100%;
+        padding: 0 15px;
+    }
+    .section-two .home .text h2{
+        width: 100%;
+    }
+
+    .section-two .home .text p{
+        font-size: 0.95em;
+    }
+
+    .section-two .home .home-img{
+        padding: 15px 0 0 0;
+        margin: 0;
+    }
 }
