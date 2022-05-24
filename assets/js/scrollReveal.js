@@ -19,3 +19,9 @@ sr.reveal('.scrollReveal-bottom', {
     distance: '50px',
     duration: 2500
 });
+
+sr.reveal('.services', {
+    origin: 'right',
+    distance: '50px',
+    duration: 2000
+});
