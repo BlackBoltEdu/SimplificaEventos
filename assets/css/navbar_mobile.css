@@ -26,6 +26,7 @@
       margin: 0;
       background: none;
       width: 150px;
+      z-index: 10;
    }
 
    header .nav-list.active{
