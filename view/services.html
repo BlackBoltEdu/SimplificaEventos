@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Simplifica Eventos</title>
+    
+    <link rel="stylesheet" type="text/css" href="./../assets/css/variables.css">
+    <link rel="stylesheet" type="text/css" href="./../assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./../assets/css/navbar_mobile.css">
+    <link rel="stylesheet" type="text/css" href="./../assets/css/landingPage.css">
+
+    <style>
+        .main-agenda{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-light);
+            background: var(--color-secundary);
+        }
+
+        .form_agenda{
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            background: var(--color-primary);
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .box-agenda .input-agenda{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .data{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="toggle"></div>
+    <div id="sidebar">
+        <header>
+            <nav class="nav-list" id="nav-bar">
+                <a class="link-logo" href="#start">
+                    <img src="./../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos"
+                        id="logo">
+                </a>
+
+                <ul class="list">
+                    <li class="item"><a href="">HOME</a></li>
+                    <li class="item"><a href="">SOBRE</a></li>
+                    <li class="item"><a href="#services"><span>SERVIÇOS</span></a></li>
+                    <li class="item"><a href="">PACOTES</a></li>
+                    <li class="item"><a href="./loginUser.php">LOGIN</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="main-agenda">
+        <form class="form_agenda">
+
+            <div class="box-agenda">
+
+                <div class="input-agenda">
+                    <label for=""></label>
+                    <input type="text" name="">
+                </div>
+
+                <div class="input-agenda">
+                    <label for=""></label>
+                    <input type="text">
+                </div>
+
+                <div class="input-agenda">
+                    <input type="checkbox">
+                </div>
+
+                <div class="input-agenda data">
+                    <label for="data">Que dia é o seu evento?</label>
+                    <input type="datetime-local" name="data" id="data" min="2022-05-29T00:00" max="2023-05-29T00:00">
+                </div>
+            
+            </div>
+
+        </form>
+    </div>
+
+    <script src="./../assets/js/navbar_mobile.js"></script>
+    <script src="./../assets/js/register.js"></script>
+    <script src="./../assets/js/scrollReveal.js"></script>
+    <script src="./../assets/js/script.js"></script>
+    
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>

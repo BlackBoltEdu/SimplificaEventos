@@ -251,6 +251,15 @@ html, body{
 }
 /* SECTION THREE END */
 
+footer{
+    height: 100px;
+    color: #FFF;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* MEDIA QUERY */
 @media screen and (min-width: 1050px) and (max-width: 1300px) {
     .section-two .home{

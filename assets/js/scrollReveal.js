@@ -25,3 +25,7 @@ sr.reveal('.services', {
     distance: '50px',
     duration: 2000
 });
+
+window.addEventListener('scroll', () =>{
+    document.querySelector('#nav-bar').classList.toggle('teste', window.scrollY > 0);
+});

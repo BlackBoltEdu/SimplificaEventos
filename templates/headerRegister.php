@@ -14,26 +14,20 @@
 
 <body>
     <div id="toggle"></div>
-        <div id="sidebar">
+    <div id="sidebar">
         <header>
             <nav class="nav-list" id="nav-bar">
-                <a class="link-logo" href="./../public/landingPage.php">
+                <a class="link-logo" href="#start">
                     <img src="./../assets/img/logo-simplifica-eventos-white.svg" alt="Logo Simplifica Eventos"
                         id="logo">
                 </a>
 
                 <ul class="list">
-                    <li class="item"><a href="">HOME</a></li>
+                    <li class="item"><a href="#home">HOME</a></li>
                     <li class="item"><a href="">SOBRE</a></li>
-                    <li class="dropdown">
-                        <span>SERVIÇOS<ion-icon name="chevron-down-outline"></ion-icon></span>
-                        <ul class="sub-list">
-                            <li class="sub-list_item"><a href="">SERVIÇO 1</a></li>
-                            <li class="sub-list_item"><a href="">SERVIÇO 2</a></li>
-                            <li class="sub-list_item"><a href="">SERVIÇO 3</a></li>
-                        </ul>
-                    </li>
+                    <li class="item"><a href="#services"><span>SERVIÇOS</span></a></li>
                     <li class="item"><a href="">PACOTES</a></li>
+                    <li class="item"><a href="./loginUser.php">LOGIN</a></li>
                 </ul>
             </nav>
         </header>

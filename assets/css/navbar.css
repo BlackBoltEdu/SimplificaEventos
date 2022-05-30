@@ -21,6 +21,10 @@ header .nav-list{
     z-index: 100;
 }
 
+/* header .nav-list.teste{
+    background: var(--bg-color-primary);
+} */
+
 header .nav-list a, header .nav-list span{
     color: var(--color-light);
     text-decoration: none;
@@ -72,31 +76,4 @@ header .nav-list .list li.item::after{
 }
 header .nav-list .list li.item:hover::after{
     transform: scale(1);
-}
-
-/* SUB LIST */
-.list .dropdown .sub-list{
-    position: absolute;
-    width: 160%;
-    height: auto;
-    background: var(--bg-color-primary);
-    border-radius: 10px;
-    top: 30px;
-    left: -38px;
-    opacity: 0;
-    transition: .3s;
-    z-index: -1;
-}
-.list .dropdown:hover .sub-list{
-    z-index: 2;
-    border-radius: 10px;
-    opacity: 1;
-}
-.list .dropdown .sub-list li{
-    margin: 20px;
-}
-
-.list .dropdown:hover .sub-list li:hover{
-    transform: scale(1.05);
-    letter-spacing: 1.4px;
 }
