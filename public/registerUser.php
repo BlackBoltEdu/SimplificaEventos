@@ -22,7 +22,7 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
         'password' => password_hash($data['password'], PASSWORD_DEFAULT),
     ]);
 
-    if (is_numeric($operation)) {
+    if ($operation) {
 
         // SESSÃO DE VALIDAÇÃO
         $_SESSION['usuario_mestre'] = [
@@ -34,11 +34,11 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
             'logado'   => true,
         ];
 
-        header('Location: landingPage.php');
+        header('Location: dashboardUser.php');
         exit;
     }
 }
 
-include __DIR__ . '/../templates/headerRegister.php';
+include __DIR__ . '/../templates/headerMain.php';
 include __DIR__ . '/../view/public/registerUser.php';
-include __DIR__ . '/../templates/footer.php';
+include __DIR__ . '/../templates/footerMain.php';

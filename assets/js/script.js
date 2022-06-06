@@ -11,24 +11,34 @@ services.forEach((service) => {
 
 const itensSelecionados = document.querySelectorAll('.input-agenda input[type="checkbox"]');
 const btnAgendar = document.querySelector('#btn-agendar');
+const servicos = document.querySelector('#json_servicos');
 let arrayServicos = [];
+
+btnAgendar.addEventListener('click', (e) => {
+    itensSelecionados.forEach((item) => {
+        if (!item.checked) {
+            
+            if (arrayServicos.indexOf(item.value) !== -1) {
+                arrayServicos.splice(item.value, 1);
+            }
+        }else if (item.checked) {
+            if (arrayServicos.indexOf(item.value) === -1) {
+                arrayServicos.push(item.value);
+            }           
+        }
+
+        // if (arrayServicos.length === 0) {
+        //     btnAgendar.setAttribute('disabled', 'disabled');
+        // }else{
+        //     btnAgendar.removeAttribute('disabled');
+        // }
+    });
+
+    servicos.value = `[${arrayServicos}]`;
+})
 
 document.querySelectorAll('.input-agenda input').forEach(function(input) {
     input.addEventListener('change', function() {
         this.parentNode.classList.toggle('checked-agenda');
     });
 });
-
-btnAgendar.addEventListener('click', (e) => {
-    itensSelecionados.forEach((item) => {
-        if (item.checked) {
-            if(arrayServicos.indexOf(item.value) === -1){
-                arrayServicos.splice(item.value !== true);
-                arrayServicos.push(item.value);
-                
-                console.log(arrayServicos);
-            }           
-        }
-    })
-    e.preventDefault();
-})

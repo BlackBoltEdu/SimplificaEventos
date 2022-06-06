@@ -28,7 +28,7 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
         if (password_verify($data['password'], $login[0]['password'])) {
 
             // SESSÃO DE VALIDAÇÃO
-            $_SESSION['usuario_mestre'] = [
+            $_SESSION['section_user'] = [
 
                 'id'       => $login[0]['id'],
                 'name'     => $login[0]['name'],
@@ -37,7 +37,7 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
                 'logado'   => true,
             ];
 
-            header('Location: landingPage.php');
+            header('Location: dashboardUser.php');
             exit;
         } else {
 

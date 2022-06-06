@@ -24,7 +24,7 @@ class Login
     {
         self::init();
 
-        if (!isset($_SESSION['usuario_mestre']) ||  empty($_SESSION['usuario_mestre']) || $_SESSION['usuario_mestre']['logado'] !== true) {
+        if (!isset($_SESSION['section_user']) ||  empty($_SESSION['section_user']) || $_SESSION['section_user']['logado'] !== true) {
             header('location: loginUser.php');
             exit;
         }
@@ -36,8 +36,8 @@ class Login
     public static function logado()
     {
         self::init();
-        if (isset($_SESSION['usuario_mestre']) &&  !empty($_SESSION['usuario_mestre']) && $_SESSION['usuario_mestre']['logado'] == true) {
-            header('location: landingPage.php');
+        if (isset($_SESSION['section_user']) &&  !empty($_SESSION['section_user']) && $_SESSION['section_user']['logado'] == true) {
+            header('location: dashboardUser.php');
             exit;
         }
     }
@@ -50,8 +50,8 @@ class Login
         self::init();
 
         // REMOVE A SESSÃO DE USUÁRIO
-        unset($_SESSION['usuario_mestre']);
-        header('location: index.php?session=closed');
+        unset($_SESSION['section_user']);
+        header('location: loginUser.php?session=closed');
         exit;
     }
 }

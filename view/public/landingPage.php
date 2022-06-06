@@ -16,11 +16,11 @@
             </p>
 
             <div class="section-two__btn scrollReveal-bottom">
-                <a href=""><span>Agende seu Evento</span><i></i></a>
+                <a href="public/services.php"><span>Agende seu Evento</span><i></i></a>
             </div>
         </div>
 
-        <img class="home-img scrollReveal-right" src="./../assets/img/event-illustration.svg" alt="">
+        <img class="home-img scrollReveal-right" src="assets/img/event-illustration.svg" alt="">
 
     </div>
 </section>
@@ -37,7 +37,7 @@
         <div class="services">
             <div class="service">
                 <div class="center">
-                    <img src="./../assets/img/serviços/moments.svg" alt="Ilustração de uma camera fotografica">
+                    <img src="assets/img/serviços/moments.svg" alt="Ilustração de uma camera fotografica">
                 </div>
 
                 <h3>Fotos e Vídeos</h3>
@@ -46,7 +46,7 @@
 
             <div class="service">
                 <div class="center">
-                    <img src="./../assets/img/serviços/food.svg" alt="Ilustração de um prato de comida">
+                    <img src="assets/img/serviços/food.svg" alt="Ilustração de um prato de comida">
                 </div>
 
                 <h3>Buffet</h3>
@@ -55,7 +55,7 @@
 
             <div class="service">
                 <div class="center">
-                    <img src="./../assets/img/serviços/fest-animation.svg" alt="">
+                    <img src="assets/img/serviços/fest-animation.svg" alt="">
                 </div>
 
                 <h3>Animador de Festa</h3>
@@ -64,7 +64,7 @@
 
             <div class="service">
                 <div class="center">
-                    <img src="./../assets/img/serviços/space-location.svg" alt="Ilustração procurando um local">
+                    <img src="assets/img/serviços/space-location.svg" alt="Ilustração procurando um local">
                 </div>
 
                 <h3>Espaço para Eventos</h3>
@@ -73,7 +73,7 @@
             
             <div class="service">
                 <div class="center">
-                    <img src="./../assets/img/serviços/music.svg" alt="Ilustração do DJ Marshmallow">
+                    <img src="assets/img/serviços/music.svg" alt="Ilustração do DJ Marshmallow">
                 </div>
 
                 <h3>Serviços de Som</h3>
@@ -82,7 +82,7 @@
             
             <div class="service">
                 <div class="center">
-                    <img src="./../assets/img/serviços/organizer.svg" alt="">
+                    <img src="assets/img/serviços/organizer.svg" alt="">
                 </div>
 
                 <h3>Decorações</h3>
@@ -92,7 +92,3 @@
     </div>
 
 </section>
-
-<footer>
-    <p>&copy; Todos os direitos reservados</p>
-</footer>

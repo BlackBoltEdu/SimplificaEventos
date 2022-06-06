@@ -219,3 +219,16 @@
 .input-agenda.checked-agenda .cards{
     color: var(--color-dark)
 }
+
+.error-evento{
+    width: 100%;
+
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    margin: 40px 10px 0 10px;
+    border-radius: 5px;
+    background-color: rgb(241, 144, 144);
+}
