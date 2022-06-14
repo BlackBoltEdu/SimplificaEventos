@@ -7,6 +7,9 @@ use \App\Session\Login;
 
 Login::login();
 
+// AUXILIARES
+$title = 'Agendar - Simplifica Eventos';
+
 if (isset($_POST['btn_agendar']) && !empty($_POST['btn_agendar'])) {
   
     $data = filter_input_array(INPUT_POST, FILTER_DEFAULT);

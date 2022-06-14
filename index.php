@@ -1,9 +1,9 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-// use \App\Session\Login;
+use \App\Session\Login;
 
-// Login::login();
+Login::init();
 
 include __DIR__ . '/templates/header.php';
 include __DIR__ . '/view/public/landingPage.php';

@@ -9,6 +9,9 @@ use App\Model\Conexao;
 // VERIFICANDO STATUS
 Login::logado();
 
+// AUXILIARES
+$title = 'Cadastro - Simplifica Eventos';
+
 if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
 
     $data = filter_input_array(INPUT_POST, FILTER_DEFAULT);

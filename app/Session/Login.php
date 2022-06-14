@@ -37,7 +37,7 @@ class Login
     {
         self::init();
         if (isset($_SESSION['section_user']) &&  !empty($_SESSION['section_user']) && $_SESSION['section_user']['logado'] == true) {
-            header('location: dashboardUser.php');
+            header('location: dashboard.php');
             exit;
         }
     }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>//</title>
+    <title><?= $title ?></title>
     
     <link rel="stylesheet" type="text/css" href="../assets/css/variables.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
@@ -29,10 +29,9 @@
 
                 <ul class="list">
                     <li class="item"><a href="../index.php">HOME</a></li>
-                    <li class="item"><a href="">SOBRE</a></li>
-                    <li class="item"><a href="./services.html"><span>SERVIÇOS</span></a></li>
+                    <li class="item"><a href="./services.php"><span>SERVIÇOS</span></a></li>
                     <li class="item"><a href="">PACOTES</a></li>
-                    <li class="item"><a href="./loginUser.php">LOGIN</a></li>
+                    <li class="item"><a href="./loginUser.php"><?= isset($_SESSION['section_user']) ? 'DASHBOARD' : 'LOGIN' ?></a></li>
                 </ul>
             </nav>
         </header>

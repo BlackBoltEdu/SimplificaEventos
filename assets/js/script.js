@@ -26,15 +26,9 @@ btnAgendar.addEventListener('click', (e) => {
                 arrayServicos.push(item.value);
             }           
         }
-
-        // if (arrayServicos.length === 0) {
-        //     btnAgendar.setAttribute('disabled', 'disabled');
-        // }else{
-        //     btnAgendar.removeAttribute('disabled');
-        // }
     });
 
-    servicos.value = `[${arrayServicos}]`;
+    servicos.value = arrayServicos;
 })
 
 document.querySelectorAll('.input-agenda input').forEach(function(input) {

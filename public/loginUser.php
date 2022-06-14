@@ -37,7 +37,7 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
                 'logado'   => true,
             ];
 
-            header('Location: dashboardUser.php');
+            header('Location: dashboard.php');
             exit;
         } else {
 
