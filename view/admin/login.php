@@ -1,36 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../assets/css/login.css">
-</head>
-<body>
+<div class="center">
     <main class="container">
         <h1>Login</h2>
     
-        <form method="POST">
+        <form method="post">
             <div class="input-field">
                 <input type="email" name="email" id="email" placeholder="e-mail" autocomplete="off">
                     <div class="underline teste"></div>
             </div>
         
             <div class="input-field">
-                <input type="password" name="senha" id="senha" placeholder="senha">
+                <input type="password" name="password" id="senha" placeholder="senha">
                 <div class="underline"></div>
             </div>
 
             <div class="botoes">
                 <div class="cadastrar">
-                    <a href="#">
+                    <a href="./../public/registerUser.php">
                         <button id="cadastro" type="button">Cadastre-se</button>
                     </a>
                 </div>  
-                <button id="botao" type="submit">Entrar</button>
+                <button id="botao" name="btnSubmit" value="submit" type="submit">Entrar</button>
             </div>
         </form>
     </main>
-</body>
-</html>
+</div>

@@ -90,7 +90,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <?php if($alert): ?>
+                <?php if ($alert) : ?>
                     <div class="alert alert-success" role="alert">
                         Operação realizada com sucesso!
                     </div>
@@ -103,9 +103,11 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Nome do Evento</th>
-                                    <th scope="col">Data do Evento</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Permissão</th>
+                                    <th scope="col">CPF</th>
                                     <th scope="col">Ações</th>
                                 </tr>
                             </thead>
@@ -113,28 +115,20 @@
                                 <?php foreach ($tables as $table) : ?>
                                     <tr>
                                         <th scope="row"><?= $table['id'] ?></th>
-                                        <td><?= $table['nome_evento'] ?></td>
-                                        <td><?= date('d/m/Y', strtotime($table['data_evento'])) ?></td>
-                                        <td><?php
-                                            switch ($table['status']) {
-                                                case 'Pendente de análise':
-                                                    echo '<span class="badge bg-warning text-dark">Pendente de Análise</span>';
-                                                    break;
-                                                case 'Em análise':
-                                                    echo '<span class="badge bg-info text-dark">Em Análise</span>';
-                                                    break;
-                                                case 'Em andamento':
-                                                    echo '<span class="badge bg-primary">Em Andamento</span>';
-                                                    break;
-                                                case 'Concluído':
-                                                    echo '<span class="badge bg-success">Concluído</span>';
-                                                    break;
-                                                case 'Cancelado':
-                                                    echo '<span class="badge bg-danger">Cancelado</span>';
-                                                    break;
-                                            }
-                                            ?></td>
-                                        <td><a href="validation.php?id=<?= $table['id'] ?>" class="btn btn-primary col-12 fw-bold" id="chamarModal">Detalhes <i class="bi bi-eye"></i></a></td>
+                                        <td><?= $table['name'] ?></td>
+                                        <td><?= $table['email'] ?></td>
+                                        <td><?= $table['tel'] ?></td>
+                                        <td><?php if ($table['permissao'] == 's') : echo 'Ativo';
+                                            else : echo 'Inativo';
+                                            endif; ?></td>
+                                        <td><?= $table['cpf'] ?></td>
+                                        <td>
+
+                                            <div class="row">
+                                                <a href="" class="btn btn-success col m-1 fw-bold" id="chamarModal">Atualizar <i class="bi bi-pencil-square"></i></a>
+                                                <a href="" class="btn btn-danger col m-1 fw-bold" id="chamarModal">Deletar <i class="bi bi-trash"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

@@ -54,4 +54,47 @@ class Login
         header('location: loginUser.php?session=closed');
         exit;
     }
+
+    // ============================================
+    //          Sessão administrativa
+    // ============================================
+
+    /**
+     *  Método responsável por verificar se o usuário não está logado
+     */
+    public static function loginAdmin()
+    {
+        self::init();
+
+        if (!isset($_SESSION['section_admin']) || empty($_SESSION['section_admin']) || $_SESSION['section_admin']['logado'] !== true) {
+            header('location: loginUser.php');
+            exit;
+        }
+    }
+
+    /**
+     *  Método responsável por verificar se o usuário está logado
+     */
+    public static function logadoAdmin()
+    {
+        self::init();
+
+        if (isset($_SESSION['section_admin']) && !empty($_SESSION['section_admin']) && $_SESSION['section_admin']['logado'] == true) {
+            header('location: dashboard.php');
+            exit;
+        }
+    }
+
+    /**
+     *  Método responsável por deslogar usuário
+     */
+    public static function logoutAdmin()
+    {
+        self::init();
+
+        // REMOVE A SESSÃO DE USUÁRIO
+        unset($_SESSION['section_admin']);
+        header('location: login.php?session=closed');
+        exit;
+    }
 }

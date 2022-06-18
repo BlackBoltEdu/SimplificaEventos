@@ -81,7 +81,7 @@ class Conexao
     public function update($where, $values)
     {
         $fields = array_keys($values);
-        return $sql = 'UPDATE ' . $this->table . ' SET ' . implode('=?,', $fields) . '=?' . '  WHERE ' . $where . ' ';
+        $sql = 'UPDATE ' . $this->table . ' SET ' . implode('=?,', $fields) . '=?' . '  WHERE ' . $where . ' ';
         $stmt = self::getConn()->prepare($sql);
         $stmt->execute(array_values($values));
 

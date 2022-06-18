@@ -18,12 +18,12 @@ const init = () =>{
     const validatePassword = (event) =>{
         const input = event.currentTarget;
 
-        if(input.value.length < 8){
+        if(input.value.length < 8) {
             btnSubmit.setAttribute('disabled', 'disabled')
             btnSubmit.classList.remove('btnHover');
             underlinePassword.classList.add('error');
             return false;
-        }else{
+        } else {
             btnSubmit.removeAttribute('disabled');
             btnSubmit.classList.add('btnHover');
             underlinePassword.classList.remove('error');
@@ -33,19 +33,20 @@ const init = () =>{
 
     /* Conference of password */
     const passwordConference = (e) =>{
-        console.log('A')
         const inputPasswordConf = e.currentTarget.value;
         const inputPassword = password.value;
 
-        if(inputPasswordConf !== inputPassword || inputPassword.length < 8){
+        if(inputPasswordConf !== inputPassword || inputPassword.length < 8) {
             btnSubmit.setAttribute('disabled', 'disabled')
             btnSubmit.classList.remove('btnHover');
             underlinePasswordConf.classList.add('error');
+
             return false;
         }
         underlinePasswordConf.classList.remove('error');
         btnSubmit.removeAttribute('disabled');
         btnSubmit.classList.add('btnHover');
+        
         return true;
     }
 
@@ -60,21 +61,6 @@ const init = () =>{
                 .replace(/(\d{3})(\d)/, '$1.$2')
                 .replace(/(\d{3})(\d{1,2})/, '$1-$2')
                 .replace(/(-\d{2})\d+?$/, '$1');
-            /* if(value.length < 15){
-                mask = value
-                .replace(/\D/g, '')
-                .replace(/(\d{3})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d{1,2})/, '$1-$2')
-            }else{
-                mask = value
-                .replace(/\D/g, '')
-                .replace(/(\d{2})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d)/, '$1.$2')
-                .replace(/(\d{3})(\d)/, '$1/$2')
-                .replace(/(\d{4})(\d)/, '$1-$2')
-                .replace(/(-\d{2})\d+?$/, '$1');
-            } */
 
             return mask
         }
@@ -122,7 +108,6 @@ const init = () =>{
                 /* Checking second value */
                 for(let i = 0; i < 10; i++){
                     sum += validCPF[i] * (11 - i);
-                    // console.log(`${i+1}ª Repetição: Numero do CPF ${validCPF[i]}, formula ${11 - i} a soma ${sum}`)
                 }
                 
                 rest = (sum * 10) % 11;

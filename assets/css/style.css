@@ -23,12 +23,10 @@ main{
 }
 
 .container-form{
-    width: 25vw;
-    height: 60vh;
-    min-width: 400px;
+    min-width: 450px;
     min-height: 600px;
 
-    padding: 0px 3rem;
+    padding: 20px 3rem;
     background-color: #FFF;
     box-shadow: rgb(250, 250, 250) 0px 10px 25px -5px;
     border-radius: 10px;
@@ -186,9 +184,7 @@ main{
 @media screen and (min-width: 300px) and (max-width: 610px){
     .container-form{
         min-width: 330px;
-        max-width: 340px;
         min-height: 550px;
-        max-height: 560px;
         transition: 0.3s;
     }
     .btnSubmit{

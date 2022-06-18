@@ -23,6 +23,12 @@
                     </div>
 
                     <div class="input-field">
+                        <input id="tel" type="text" name="whatsapp" required>
+                        <label for="tel">Whatsapp</label>
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="input-field">
                         <input class="input-password" id="password" type="password" name="password" required>
                         <label for="password">Senha</label>
                         <img id="visiblePassword" src="../assets/img/eye-outline.svg" alt="">

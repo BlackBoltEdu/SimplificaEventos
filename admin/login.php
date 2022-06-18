@@ -7,13 +7,13 @@ use \App\Session\Login;
 use App\Model\Conexao;
 
 // VERIFICANDO STATUS
-Login::logado();
+Login::logadoAdmin();
 
 if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
 
     $data = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-    $con = new Conexao('user');
+    $con = new Conexao('admin');
 
     $mail = $data['email'];
     $login = $con->read('email = ' . "'$mail'");
@@ -28,29 +28,27 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
         if (password_verify($data['password'], $login[0]['password'])) {
 
             // SESSÃO DE VALIDAÇÃO
-            $_SESSION['section_user'] = [
-
+            $_SESSION['section_admin'] = [
                 'id'       => $login[0]['id'],
                 'name'     => $login[0]['name'],
                 'email'    => $login[0]['email'],
                 'cpf'      => $login[0]['cpf'],
+                'permissao' => $login[0]['permissao'],
                 'logado'   => true,
             ];
 
             header('Location: dashboard.php');
             exit;
         } else {
-
             header('Location: ' . $_SERVER['PHP_SELF'] . '?user=false');
             exit;
         }
     } else {
-
         header('Location: ' . $_SERVER['PHP_SELF'] . '?user=false');
         exit;
     }
 }
 
 include __DIR__ . '/../templates/headerLogin.php';
-include __DIR__ . '/../view/public/loginUser.php';
+include __DIR__ . '/../view/admin/login.php';
 // include __DIR__ . '/../templates/footer.php';

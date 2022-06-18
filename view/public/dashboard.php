@@ -1,10 +1,5 @@
 <main id="main" class="main">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
 
-    <!-- Modal -->
     <div class="modal fade" id="modalEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -15,8 +10,19 @@
                 <div class="modal-body">
                 
                     <?php foreach($modal as $modall): ?>
-
+                        <div class="container-fluid">
+                            <div class="box-flex">
+                                <div class="card-info">
+                                    <span>Evento: <?= $modall['nome_evento']?></span>
+                                </div>
+                                <div class="card-info card-data">
+                                    <span>Data do Evento: <?= date('d/m/Y', strtotime($modall['data_evento']))?></span>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="container-fluid d-flex flex-wrap justify-content-between mb-5">
+                            
                             <?php $servicos = explode(',', $modall['servicos'])?>
                             <?php foreach($servicos as $servico): ?>
 
@@ -26,20 +32,20 @@
                                 </div>
 
                             <?php endforeach; ?>
-
                         </div>
 
                         <div class="container-fluid">
                             <div class="box-flex">
                                 <div class="card-info">
-                                    <span>Evento: <?= $modall['nome_evento']?></span>
+                                    <span>Solicitação em: <?= date('d/m/Y H:i', strtotime($modall['data_criacao'])) ?></span>
                                 </div>
                                 <div class="card-info card-data">
-                                    <span><?= date('d/m/Y', strtotime($modall['data_evento']))?></span>
+                                    <span>Ultima alteração em: <?= date('d/m/Y H:i', strtotime($modall['data_alteracao']))?></span>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
+
                 </div>           
             </div>
         </div>
@@ -53,7 +59,7 @@
                 <li class="breadcrumb-item active">Dashboard</li>
             </ol>
         </nav>
-    </div><!-- End Page Title -->
+    </div>
 
     <section class="section dashboard">
         <div class="row">
@@ -89,13 +95,13 @@
                     <div class="card-body">
                         <h5 class="card-title">Eventos <span>| Cadastrados</span></h5>
 
-                        <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Nome do Evento</th>
                                     <th scope="col">Data do Evento</th>
+                                    <th scope="col">Status</th>
                                     <th scope="col">Ações</th>
                                 </tr>
                             </thead>
@@ -105,12 +111,35 @@
                                         <th scope="row"><?= $table['id'] ?></th>
                                         <td><?= $table['nome_evento'] ?></td>
                                         <td><?= date('d/m/Y', strtotime($table['data_evento'])) ?></td>
-                                        <td><a href="?id=<?= $table['id'] ?>" class="btn btn-primary col-12 fw-bold" id="chamarModal">Detalhes <i class="bi bi-eye"></i></a></td>
+                                        <td><?php 
+                                            switch($table['status']){
+                                                case 'Pendente de análise':
+                                                    echo '<span class="badge bg-warning text-dark">Pendente de Análise</span>';
+                                                    break;
+                                                case 'Em análise':
+                                                    echo '<span class="badge bg-info text-dark">Em Análise</span>';
+                                                    break;
+                                                case 'Em andamento':
+                                                    echo '<span class="badge bg-primary">Em Andamento</span>';
+                                                    break;
+                                                case 'Concluido':
+                                                    echo '<span class="badge bg-success">Concluído</span>';
+                                                    break;
+                                                case 'Concluido':
+                                                    echo '<span class="badge bg-danger">Cancelado</span>';
+                                                    break;                              
+                                            }
+                                        ?></td>
+                                        <td>
+                                            <div class="row">
+                                                <a href="?id=<?= $table['id'] ?>" class="btn btn-primary col m-1 fw-bold" id="chamarModal">Detalhes <i class="bi bi-eye"></i></a>
+                                                <a href="?id=<?= $table['id'] ?>" class="btn btn-danger col m-1 fw-bold" id="chamarModal">Cancelar <i class="bi bi-x-square"></i></a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <!-- End Table with stripped rows -->
 
                     </div>
                 </div>
@@ -118,4 +147,4 @@
             </div>
         </div>
     </section>
-</main><!-- End #main -->
+</main>

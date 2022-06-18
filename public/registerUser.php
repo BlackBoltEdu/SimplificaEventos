@@ -21,6 +21,7 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
     $operation = $con->create([
         'name'  => $data['name'],
         'email' => $data['email'],
+        'whatsapp' => $data['whatsapp'],
         'cpf'   => preg_replace('/\D/', '', $data['cpf']),
         'password' => password_hash($data['password'], PASSWORD_DEFAULT),
     ]);
@@ -28,16 +29,17 @@ if (!empty($_POST['btnSubmit']) && isset($_POST['btnSubmit'])) {
     if ($operation) {
 
         // SESSÃO DE VALIDAÇÃO
-        $_SESSION['usuario_mestre'] = [
+        $_SESSION['section_user'] = [
 
             'id'       => $operation,
             'name'     => $data['name'],
             'email'    => $data['email'],
+            'whatsapp' => $data['whatsapp'],
             'cpf'      => preg_replace('/\D/', '', $data['cpf']),
             'logado'   => true,
         ];
 
-        header('Location: dashboardUser.php');
+        header('Location: dashboard.php');
         exit;
     }
 }

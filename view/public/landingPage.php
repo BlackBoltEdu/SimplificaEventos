@@ -25,8 +25,6 @@
     </div>
 </section>
 
-
-
 <section class="section-three" id="services">
     
     <div class="cantainer-services">

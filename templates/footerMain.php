@@ -1,5 +1,5 @@
     <footer>
-        <p>&copy; Todos os direitos reservados</p>
+        &copy; Copyright&nbsp;<strong> <span> Simplifica Eventos</span></strong>. Todos os direitos reservados
     </footer>
     
     <script src="../assets/js/navbar_mobile.js"></script>

@@ -27,7 +27,7 @@
                 </a>
 
                 <ul class="list">
-                    <li class="item"><a href="../index.php">HOME</a></li>
+                    <li class="item"><a href="./index.php">HOME</a></li>
                     <li class="item"><a href="public/services.php"><span>SERVIÇOS</span></a></li>
                     <li class="item"><a href="">PACOTES</a></li>
                     <li class="item"><a href="public/loginUser.php"><?= isset($_SESSION['section_user']) ? 'DASHBOARD' : 'LOGIN' ?></a></li>

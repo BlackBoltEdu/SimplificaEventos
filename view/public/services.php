@@ -103,18 +103,16 @@
         <div class="box-form">
             <div class="input-form">
                 <label for="nome-evento">Nome do Evento:</label>
-                <input type="text" id="nome-evento" required autocomplete="off" name="nome_evento">
+                <input type="text" id="nome-evento" autocomplete="off" name="nome_evento" required>
             </div>
 
             <div class="input-form">
                 <label for="data-evento">Data do Evento:</label>
-                <input type="date" id="data-evento" required name="data_evento">
+                <input type="date" id="data-evento" name="data_evento" required>
             </div>
         </div>
 
         <input type="hidden" id="json_servicos" value="" name="servicos">
-
-        <div class="error-evento">Erro: Escolha um Serviço</div>
         <button type="submit" class="btn-agendar" id="btn-agendar" name="btn_agendar" value="agendar">Criar Evento</button>
     </form>
 </div>

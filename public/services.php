@@ -15,19 +15,24 @@ if (isset($_POST['btn_agendar']) && !empty($_POST['btn_agendar'])) {
     $data = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
     $con = new Conexao('eventos');
+
+    date_default_timezone_set('America/fortaleza');
     
     $operation = $con->create([
         'nome_evento'  => $data['nome_evento'],
         'data_evento' => $data['data_evento'],
         'servicos' => $data['servicos'],
-        'user' => $_SESSION['section_user']['id']
+        'user' => $_SESSION['section_user']['id'],
+        'data_criacao' => date('Y-m-d H:i:s'),
+        'data_alteracao' => date('Y-m-d H:i:s'),
+        'status' => 'Pendente de análise'
     ]);
 
     if ($operation) {
-        header('Location: dashboardUser.php?success=true');
+        header('Location: dashboard.php?success=true');
         exit;
     } else {
-        header('Location: dashboardUser.php?error=true');
+        header('Location: dashboard.php?error=true');
         exit;
     }
 }
